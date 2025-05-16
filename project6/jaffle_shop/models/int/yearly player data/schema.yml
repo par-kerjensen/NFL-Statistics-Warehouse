@@ -1,0 +1,406 @@
+version: 2
+
+models:
+  - name: int_yearly_player_data
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: player_id
+        data_type: string
+      - name: position
+        data_type: string
+      - name: season
+        data_type: string
+      - name: depth
+        data_type: float
+      - name: pass_attempts
+        data_type: float
+      - name: complete_pass
+        data_type: float
+      - name: incomplete_pass
+        data_type: float
+      - name: passing_yards
+        data_type: float
+      - name: passing_air_yards
+        data_type: float
+      - name: pass_td
+        data_type: float
+      - name: interception
+        data_type: float
+      - name: pass_fumble_lost
+        data_type: float
+      - name: targets
+        data_type: float
+      - name: receptions
+        data_type: float
+      - name: receiving_yards
+        data_type: float
+      - name: receiving_air_yards
+        data_type: float
+      - name: yards_after_catch
+        data_type: float
+      - name: reception_td
+        data_type: float
+      - name: reception_fumble_lost
+        data_type: float
+      - name: rush_attempts
+        data_type: float
+      - name: rushing_yards
+        data_type: float
+      - name: run_td
+        data_type: float
+      - name: run_fumble_lost
+        data_type: float
+      - name: fantasy_points_ppr
+        data_type: float
+      - name: air_yards_share
+        data_type: float
+      - name: target_share
+        data_type: float
+      - name: comp_pct
+        data_type: float
+      - name: int_pct
+        data_type: float
+      - name: pass_td_pct
+        data_type: float
+      - name: ypa
+        data_type: float
+      - name: rec_td_pct
+        data_type: float
+      - name: yptarget
+        data_type: float
+      - name: ypr
+        data_type: float
+      - name: rush_td_pct
+        data_type: float
+      - name: ypc
+        data_type: float
+      - name: touches
+        data_type: float
+      - name: total_tds
+        data_type: float
+      - name: td_pct
+        data_type: float
+      - name: total_yards
+        data_type: float
+      - name: yptouch
+        data_type: float
+      - name: games
+        data_type: float
+      - name: pass_ypg
+        data_type: float
+      - name: rec_ypg
+        data_type: float
+      - name: rush_ypg
+        data_type: float
+      - name: ypg
+        data_type: float
+      - name: ppg
+        data_type: float
+      - name: passer_rating
+        data_type: float
+      - name: game_type
+        data_type: string
+      - name: offense_pct
+        data_type: float
+      - name: delta_depth
+        data_type: float
+      - name: delta_pass_attempts
+        data_type: float
+      - name: delta_targets
+        data_type: float
+      - name: delta_rush_attempts
+        data_type: float
+      - name: delta_air_yards_share
+        data_type: float
+      - name: delta_target_share
+        data_type: float
+      - name: delta_comp_pct
+        data_type: float
+      - name: delta_int_pct
+        data_type: float
+      - name: delta_pass_td_pct
+        data_type: float
+      - name: delta_ypa
+        data_type: float
+      - name: delta_rec_td_pct
+        data_type: float
+      - name: delta_yptarget
+        data_type: float
+      - name: delta_rush_td_pct
+        data_type: float
+      - name: delta_ypc
+        data_type: float
+      - name: delta_touches
+        data_type: float
+      - name: delta_td_pct
+        data_type: float
+      - name: delta_yptouch
+        data_type: float
+      - name: delta_games
+        data_type: float 
+      - name: delta_pass_ypg
+        data_type: float 
+      - name: delta_rec_ypg
+        data_type: float 
+      - name: delta_rush_ypg
+        data_type: float 
+      - name: delta_ypg
+        data_type: float 
+      - name: delta_ppg
+        data_type: float 
+      - name: delta_passer_rating
+        data_type: float 
+      - name: delta_offense_pct
+        data_type: float 
+      - name: team_total_snaps
+        data_type: int64
+      - name: team_yards_gained
+        data_type: int64 
+      - name: team_pass_snaps_count
+        data_type: int64 
+      - name: team_pass_snaps_pct
+        data_type: float 
+      - name: team_pass_attempts
+        data_type: int64
+      - name: team_complete_pass
+        data_type: int64
+      - name: team_incomplete_pass
+        data_type: int64
+      - name: team_passing_yards
+        data_type: int64 
+      - name: team_pass_td
+        data_type: int64
+      - name: team_interception
+        data_type: int64
+      - name: team_targets
+        data_type: int64
+      - name: team_receptions
+        data_type: int64
+      - name: team_receiving_yards
+        data_type: int64
+      - name: team_receiving_td
+        data_type: int64
+      - name: team_rush_snaps_count
+        data_type: int64
+      - name: team_rush_snaps_pct
+        data_type: float 
+      - name: team_rushing_yards
+        data_type: int64
+      - name: team_run_td
+        data_type: int64
+      - name: offense_snaps
+        data_type: int64
+      - name: yards_pct
+        data_type: float 
+      - name: draft_year
+        data_type: float 
+      - name: draft_round
+        data_type: float
+      - name: draft_pick
+        data_type: float 
+      - name: draft_ovr
+        data_type: float 
+      - name: height
+        data_type: float 
+      - name: weight
+        data_type: float 
+      - name: college
+        data_type: string 
+      - name: age
+        data_type: int64
+      - name: wins
+        data_type: int64 
+      - name: losses
+        data_type: int64 
+      - name: ties
+        data_type: int64 
+      - name: win_pct
+        data_type: float 
+      - name: seasons_played
+        data_type: float 
+      - name: career_pass_attempts
+        data_type: float 
+      - name: average_pass_attempts
+        data_type: float 
+      - name: career_complete_pass
+        data_type: float 
+      - name: average_complete_pass
+        data_type: float
+      - name: average_incomplete_pass
+        data_type: float 
+      - name: career_passing_yards
+        data_type: float 
+      - name: average_passing_yards
+        data_type: float 
+      - name: career_passings_air_yards
+        data_type: float 
+      - name: average_passing_air_yards
+        data_type: float 
+      - name: career_pass_td
+        data_type: float 
+      - name: average_pass_td
+        data_type: float 
+      - name: career_interception
+        data_type: float 
+      - name: average_interception
+        data_type: float 
+      - name: career_pass_fumble_lost
+        data_type: float 
+      - name: average_pass_fumble_lost
+        data_type: float 
+      - name: career_targets
+        data_type: float 
+      - name: average_targets
+        data_type: float 
+      - name: career_receptions
+        data_type: float 
+      - name: average_receptions
+        data_type: float
+      - name: career_receiving_yards
+        data_type: float 
+      - name: average_receiving_yards
+        data_type: float 
+      - name: career_receiving_air_yards
+        data_type: float 
+      - name: average_receiving_air_yards
+        data_type: float 
+      - name: career_yards_after_catch
+        data_type: float 
+      - name: average_yards_after_catch
+        data_type: float 
+      - name: career_reception_td
+        data_type: float 
+      - name: average_reception_td
+        data_type: float 
+      - name: career_reception_fumble_lost
+        data_type: float 
+      - name: average_reception_fumble_lost
+        data_type: float 
+      - name: career_rush_attempts
+        data_type: float 
+      - name: average_rush_attempts
+        data_type: float 
+      - name: career_rushing_yards
+        data_type: float 
+      - name: average_rushing_yards
+        data_type: float 
+      - name: career_run_td
+        data_type: float
+      - name: average_run_td
+        data_type: float 
+      - name: career_run_fumble_lost
+        data_type: float 
+      - name: average_run_fumble_lost
+        data_type: float 
+      - name: career_fantasy_points_ppr
+        data_type: float 
+      - name: average_fantasy_points_ppr
+        data_type: float 
+      - name: career_touches
+        data_type: float 
+      - name: average_touches
+        data_type: float 
+      - name: career_total_tds
+        data_type: float 
+      - name: average_total_tds
+        data_type: float 
+      - name: career_total_yards
+        data_type: float 
+      - name: average_total_yards
+        data_type: float 
+      - name: career_games
+        data_type: float 
+      - name: average_games
+        data_type: float 
+      - name: career_offense_snaps
+        data_type: float 
+      - name: average_offense_snaps
+        data_type: float
+      - name: average_comp_pct
+        data_type: float 
+      - name: average_int_pct
+        data_type: float 
+      - name: average_pass_td_pct
+        data_type: float 
+      - name: average_ypa
+        data_type: float 
+      - name: average_rec_td_pct
+        data_type: float 
+      - name: average_yptarget
+        data_type: float 
+      - name: average_ypr
+        data_type: float 
+      - name: average_rush_td_pct
+        data_type: float 
+      - name: average_ypc
+        data_type: float 
+      - name: average_td_pct
+        data_type: float 
+      - name: average_yptouch
+        data_type: float 
+      - name: average_pass_ypg
+        data_type: float 
+      - name: average_rec_ypg
+        data_type: float 
+      - name: average_rush_ypg
+        data_type: float 
+      - name: average_ypg
+        data_type: float
+      - name: average_ppg
+        data_type: float 
+      - name: injuries
+        data_type: float 
+      - name: career_injuries
+        data_type: float 
+      - name: vacated_pass_attempts
+        data_type: float 
+      - name: vacated_complete_pass
+        data_type: float 
+      - name: vacated_incomplete_pass
+        data_type: float 
+      - name: vacated_passing_yards
+        data_type: float 
+      - name: vacated_passing_air_yards
+        data_type: float 
+      - name: vacated_pass_td
+        data_type: float 
+      - name: vacated_interception
+        data_type: float 
+      - name: vacated_targets
+        data_type: float 
+      - name: vacated_receptions
+        data_type: float 
+      - name: vacated_receiving_yards
+        data_type: float 
+      - name: vacated_receiving_air_yards
+        data_type: float 
+      - name: vacated_yards_after_catch
+        data_type: float
+      - name: vacated_reception_td
+        data_type: float 
+      - name: vacated_rush_attempts
+        data_type: float 
+      - name: vacated_rushing_yards
+        data_type: float 
+      - name: vacated_run_td
+        data_type: float 
+      - name: vacated_touches
+        data_type: float 
+      - name: vacated_total_yards
+        data_type: float 
+      - name: _data_source
+        data_type: string
+      - name: _load_time
+        data_type: timestamp
+      - name: team_players
+        data_type: string
+      - name: player_season_id
+        data_type: int64
+        constraints:
+          - type: primary_key
+        tests:
+          - unique
+          - not_null
+      

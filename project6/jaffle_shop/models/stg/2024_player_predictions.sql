@@ -1,0 +1,43 @@
+with stg_2024_player_predictions as(
+    select team,
+    player_id,
+    player_name,
+    position,
+    depth,
+    draft_year,
+    draft_round,
+    draft_pick,
+    draft_ovr,
+    height,
+    weight,
+    college,
+    age,
+    seasons_played,
+    rush_attempts,
+    rushing_yards,
+    touches,
+    receptions,
+    targets,
+    receiving_yards,
+    yards_after_catch,
+    total_yards,
+    total_tds,
+    run_td,
+    reception_td,
+    fantasy_points_ppr,
+    position_fantasy_rank,
+    total_fantasy_rank,
+    pass_attempts,
+    complete_pass,
+    incomplete_pass,
+    passing_yards,
+    passings_air_yards as passing_air_yards,
+    interception,
+    pass_td,
+    _data_source,
+    _load_time
+    from {{ source ('football_dataset_raw', '2024_player_predictions')}}
+)
+
+select *
+from stg_2024_player_predictions

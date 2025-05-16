@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: football_dataset_raw
+    database: group-5-448704
+    schema: football_dataset_raw
+    tables:
+      - name: 2024_player_predictions
+      - name: 2024_weekly_stats
+      - name: spreadspoke_scores
+      - name: stadiums
+      - name: superbowl_ratings
+      - name: teams
+      - name: teams_data
+      - name: yearly_player_data	
+      - name: yearly_team_data

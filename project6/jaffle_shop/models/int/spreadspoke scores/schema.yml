@@ -1,0 +1,74 @@
+version: 2
+
+models:
+  - name: int_spreadspoke_scores
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: schedule_date
+        data_type: string
+      - name: schedule_season
+        data_type: string
+      - name: schedule_week
+        data_type: string
+      - name: schedule_playoff
+        data_type: boolean
+      - name: team_home
+        data_type: string
+        constraints:
+          - type: foreign_key
+            to: ref('team_conference')
+            to_columns: [name]
+        tests:
+          - relationships:
+              to: ref('team_conference')
+              field: name
+      - name: score_home
+        data_type: int64
+      - name: score_away
+        data_type: int64
+      - name: team_away
+        data_type: string
+        constraints:
+          - type: foreign_key
+            to: ref('team_conference')
+            to_columns: [name]
+        tests:
+          - relationships:
+              to: ref('team_conference')
+              field: name
+      - name: team_favorite_id
+        data_type: string
+      - name: spread_favorite
+        data_type: float
+      - name: over_under_line
+        data_type: float
+      - name: stadium_name
+        data_type: string
+      - name: stadium_neutral
+        data_type: boolean
+      - name: weather_temperature
+        data_type: integer
+      - name: weather_wind_mph
+        data_type: int64
+      - name: weather_humidity
+        data_type: int64
+      - name: weather_detail
+        data_type: string
+      - name: _data_source
+        data_type: string
+      - name: _load_time
+        data_type: timestamp
+      - name: game_id
+        data_type: int64
+        constraints:
+          - type: primary_key
+        tests:
+          - unique
+          - not_null
+      - name: old_stadium_name
+        data_type: string
+      - name: universal_stadium_id
+        data_type: int64
+      

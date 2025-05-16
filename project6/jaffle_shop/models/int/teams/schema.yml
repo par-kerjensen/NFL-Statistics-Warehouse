@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: team_conference
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: name
+        data_type: string
+        constraints:
+          - type: primary_key
+          - type: foreign_key
+            to: ref('team_identification')
+            to_columns: [name]
+        tests: 
+          - unique 
+          - not_null
+          - relationships:
+              to: ref('team_identification')
+              field: name
+      - name: conference
+        data_type: string
+      - name: conference_pre_2002
+        data_type: string
+      - name: division_pre_2002
+        data_type: string
+      - name: _data_source
+        data_type: string
+      - name: _load_time
+        data_type: timestamp
+  - name: team_identification
+    config:
+      contract: 
+        enforced: true
+    columns: 
+      - name: name
+        data_type: string
+        constraints:
+          - type: primary_key
+        tests:
+         - unique
+         - not_null
+      - name: name_short
+        data_type: string
+      - name: id
+        data_type: string
+      - name: id_pfr
+        data_type: string
+      - name: _data_source
+        data_type: string
+      - name: _load_time
+        data_type: timestamp

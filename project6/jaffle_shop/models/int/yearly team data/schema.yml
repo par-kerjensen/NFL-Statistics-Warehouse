@@ -1,0 +1,129 @@
+version: 2
+
+models:
+  - name: int_yearly_team_data
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: team
+        data_type: string
+        constraints:
+          - type: foreign_key
+            to: ref('team_conference')
+            to_columns: [name]
+        tests:
+          - relationships:
+              to: ref('team_conference')
+              field: name
+      - name: season
+        data_type: string
+      - name: total_snaps
+        data_type: int64
+      - name: yards_gained
+        data_type: int64
+      - name: touchdowns
+        data_type: int64
+      - name: extra_point_attempts
+        data_type: int64
+      - name: field_goal_attempts
+        data_type: int64
+      - name: total_points
+        data_type: int64
+      - name: td_points
+        data_type: int64
+      - name: xp_points
+        data_type: int64
+      - name: fg_points
+        data_type: int64
+      - name: fumble
+        data_type: int64
+      - name: fumble_lost
+        data_type: int64
+      - name: shotgun
+        data_type: int64
+      - name: no_huddle
+        data_type: int64
+      - name: qb_dropback
+        data_type: int64
+      - name: pass_snaps_count
+        data_type: int64
+      - name: pass_snaps_pct
+        data_type: float
+      - name: pass_attempts
+        data_type: int64
+      - name: complete_passes
+        data_type: int64
+      - name: incomplete_passes
+        data_type: int64
+      - name: air_yards
+        data_type: int64
+      - name: passing_yards
+        data_type: int64
+      - name: pass_td
+        data_type: int64
+      - name: interceptions
+        data_type: int64
+      - name: targets
+        data_type: int64
+      - name: receptions
+        data_type: int64
+      - name: receiving_yards
+        data_type: int64
+      - name: yards_after_catch
+        data_type: int64
+      - name: receiving_td
+        data_type: int64
+      - name: pass_fumbles
+        data_type: int64
+      - name: pass_fumbles_lost
+        data_type: int64
+      - name: rush_snaps_count
+        data_type: int64
+      - name: rush_snaps_pct
+        data_type: float
+      - name: qb_scramble
+        data_type: int64
+      - name: rushing_yards
+        data_type: int64
+      - name: run_td
+        data_type: int64
+      - name: run_fumble
+        data_type: int64
+      - name: run_fumble_lost
+        data_type: int64
+      - name: home_wins
+        data_type: int64
+      - name: home_losses
+        data_type: int64
+      - name: home_ties
+        data_type: int64
+      - name: away_wins
+        data_type: int64
+      - name: away_losses
+        data_type: int64
+      - name: away_ties
+        data_type: int64
+      - name: wins
+        data_type: int64
+      - name: losses
+        data_type: int64
+      - name: ties
+        data_type: int64
+      - name: win_pct
+        data_type: float
+      - name: record
+        data_type: string
+      - name: yps
+        data_type: float
+      - name: _data_source
+        data_type: string
+      - name: _load_time
+        data_type: timestamp
+      - name: team_season_id
+        data_type: int64
+        constraints: 
+          - type: primary_key
+        tests:
+          - unique
+          - not_null

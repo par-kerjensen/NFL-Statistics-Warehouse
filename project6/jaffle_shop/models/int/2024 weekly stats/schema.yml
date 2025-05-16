@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: int_2024_weekly_stats
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: team
+        data_type: string
+        constraints:
+          - type: primary_key
+          - type: foreign_key
+            to: ref('team_conference')
+            to_columns: ['name']
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('team_conference')
+              field: name
+      - name: total_win
+        data_type: int64
+      - name: total_lost
+        data_type: int64
+      - name: total_tie
+        data_type: int64
+      - name: first_downs
+        data_type: string
+      - name: rushing_yds
+        data_type: int64
+      - name: passing_yds
+        data_type: int64
+      - name: penalties
+        data_type: int64
+      - name: yds_gained
+        data_type: int64
+      - name: avg_yds_game
+        data_type: float
+      - name: times_sacked
+        data_type: int64
+      - name: _data_source
+        data_type: string
+      - name: _load_time
+        data_type: timestamp

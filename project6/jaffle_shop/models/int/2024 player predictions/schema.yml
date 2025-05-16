@@ -1,0 +1,105 @@
+version: 2
+
+models:
+  - name: int_2024_player_predictions
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: team
+        data_type: string
+        constraints:
+          - type: foreign_key
+            to: ref('int_yearly_team_data')
+            to_columns: [team]
+            to: ref('int_2024_weekly_stats')
+            to_columns: [team]
+            to: ref('team_conference')
+            to_columns: [name]
+        tests:
+          - relationships:
+              to: ref('int_yearly_team_data')
+              field: team
+              to: ref('int_2024_weekly_stats')
+              field: team
+              to: ref('team_conference')
+              field: name
+      - name: player_id
+        data_type: string
+        constraints:
+          - type: primary_key
+        tests:
+          - unique
+          - not_null
+      - name: player_name
+        data_type: string
+      - name: position
+        data_type: string
+      - name: depth
+        data_type: int64
+      - name: draft_year
+        data_type: string
+      - name: draft_round
+        data_type: int64
+      - name: draft_pick
+        data_type: int64
+      - name: draft_ovr
+        data_type: int64
+      - name: height
+        data_type: int64
+      - name: weight
+        data_type: int64
+      - name: college
+        data_type: string
+      - name: age
+        data_type: string
+      - name: seasons_played
+        data_type: int64
+      - name: rush_attempts
+        data_type: int64
+      - name: rushing_yards
+        data_type: int64
+      - name: touches
+        data_type: int64
+      - name: receptions
+        data_type: int64
+      - name: targets
+        data_type: int64
+      - name: receiving_yards
+        data_type: int64
+      - name: yards_after_catch
+        data_type: int64
+      - name: total_yards
+        data_type: int64
+      - name: total_tds
+        data_type: int64
+      - name: run_td
+        data_type: int64
+      - name: reception_td
+        data_type: int64
+      - name: fantasy_points_ppr
+        data_type: float
+      - name: position_fantasy_rank
+        data_type: float
+      - name: total_fantasy_rank
+        data_type: int64
+      - name: pass_attempts
+        data_type: int64
+      - name: complete_pass
+        data_type: int64
+      - name: incomplete_pass
+        data_type: int64
+      - name: passing_yards
+        data_type: int64
+      - name: passing_air_yards
+        data_type: int64
+      - name: interception
+        data_type: int64
+      - name: pass_td
+        data_type: int64
+      - name: _data_source
+        data_type: string
+      - name: _load_time
+        data_type: timestamp
+
+      
